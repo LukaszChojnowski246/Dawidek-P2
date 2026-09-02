@@ -1,0 +1,31 @@
+#zad 1
+def add(a, b):
+    return a + b
+
+wynik = add(2, 6)
+print(wynik)
+#zad 2
+def silnia(A):
+    if A == 0:
+        return 1
+    else:
+        return A * silnia(A - 1)
+
+print(silnia(3))
+
+def odwor_tekst(tekst):
+    return tekst[:: -1]
+print(odwor_tekst("kajak"))
+
+def liczba(licz):
+    if licz / licz and licz / 1:
+        return "to liczba pierwsza"
+    else:
+        return "nie jest"
+print(liczba(1))
+
+
+def funk(list):
+    return sum(list) / len(list)
+
+print(list([5, 1, 7]))
