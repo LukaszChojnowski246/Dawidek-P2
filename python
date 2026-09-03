@@ -1,0 +1,38 @@
+import os
+def temp():
+    z = int(input("podaj liczbe cel "))
+    return ((z * 1.8) + 32)
+
+def dlugosc():
+    d = float(input("podaj cm "))
+    return (d / 100)
+
+def masa():
+    m = int(input("podaj liczbe kg "))
+    return (m * 1000)
+
+def waluta():
+    w = float(input("wybiesz ile pln na czk "))
+    w * 5.59
+    return (w * 5.59)
+    
+while True:
+    print("MENU")
+    print("cel na fahre A")
+    print("cm na m B")
+    print("kg na g C")
+    print("pln na czk D")
+    x = input(" \n co wybierasz? ")
+
+
+
+    if x == "A":
+        temp()    
+    elif x == "B":
+        dlugosc()   
+    elif x == "C":
+        masa()  
+    elif x == "D":
+        waluta()
+    else:
+        continue
