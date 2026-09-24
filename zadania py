@@ -1,0 +1,31 @@
+lista = [
+   {"nazwa_zadania": "cos"   },
+   {"przypisana_osoba": "Jan Kowalski"},
+   {"priorytet": "średni"},
+   {"status": "w trakcie"},
+   {"kategorie": "baza danych"}
+]
+
+def usun():
+    u = input("podaj nazwe zadania ")
+    if u == lista[]
+    
+
+
+while True:
+    print("Task Manager")
+    print("Dodaj zadanie 1")
+    print("Wyświetl wszystkie zadania 2")
+    print("Wyszukaj Zadanie 3")
+    print("Oznacz jako wykonane 4 ")
+    print("Usuń zadanie 5")
+    print("EXIT 6")
+    x = int(input("Co chcesz zrobić? "))
+
+    if x == "6":
+        break
+    elif x == "5":
+        pass
+
+
+https://docs.google.com/document/d/1RGe54fXcnCEIrKA8b0eoogqMzeWRiJK3TnGODPyfh-g/edit?tab=t.0#heading=h.68xnv76lbu5v
