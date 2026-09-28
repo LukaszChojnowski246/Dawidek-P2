@@ -14,4 +14,16 @@ zad 7
 SELECT nr_faktury, kwota_brutto, data_wystawienia FROM faktury WHERE data_wystawienia BETWEEN '2023-03-01' AND '2023-03-31';
 zad 8
 SELECT imie, nazwisko, data_zatrudnienia FROM pracownicy WHERE data_zatrudnienia BETWEEN '2020-01-01' AND '2100-01-01';
-zad 9
+zad 10
+SELECT nazwa_produktu, cena_sprzedazy FROM produkty WHERE jednostka_miary = 'szt' ORDER BY cena_sprzedazy ASC;
+zad 11
+SELECT nazwa_magazynu, miasto FROM magazyny WHERE miasto = "Warszawa" OR miasto = "Kraków";
+zad 12
+SELECT id_zamowienia, koszt_dostawy FROM zamowienia WHERE koszt_dostawy = 0;
+zad 13
+SELECT imie, nazwisko, pensja_podstawowa, plec FROM pracownicy WHERE plec = "M" AND pensja_podstawowa > 8000;
+zad 14
+SELECT kp.nazwa_kategorii, kp.nadrzedna_kategoria_id FROM produkty p INNER JOIN kategorie_produktow kp ON p.id_kategorii = kp.id_kategorii WHERE kp.nadrzedna_kategoria_id IS NULL;
+zad 15
+SELECT nazwa_produktu FROM produkty WHERE nazwa_produktu LIKE '%Pro%';
+
