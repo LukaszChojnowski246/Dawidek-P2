@@ -1,3 +1,5 @@
+ŁATWEE
+
 zad 1 
 SELECT * FROM produkty WHERE id_kategorii = 12;
 zad 2
@@ -27,3 +29,9 @@ SELECT kp.nazwa_kategorii, kp.nadrzedna_kategoria_id FROM produkty p INNER JOIN 
 zad 15
 SELECT nazwa_produktu FROM produkty WHERE nazwa_produktu LIKE '%Pro%';
 
+SREDNIE
+zad1
+SELECT kp.nazwa_kategorii, AVG(p.cena_sprzedazy), p.id_kategorii FROM produkty p INNER JOIN kategorie_produktow kp ON p.id_kategorii = kp.id_kategorii ORDER BY AVG(p.cena_sprzedazy) ASC;
+zad2
+SELECT nazwa_firmy, rabat_staly FROM klienci WHERE typ_klienta = "firma" AND rabat_staly > 3 ORDER BY rabat_staly ASC;
+zad 3
