@@ -35,3 +35,8 @@ SELECT kp.nazwa_kategorii, AVG(p.cena_sprzedazy), p.id_kategorii FROM produkty p
 zad2
 SELECT nazwa_firmy, rabat_staly FROM klienci WHERE typ_klienta = "firma" AND rabat_staly > 3 ORDER BY rabat_staly ASC;
 zad 3
+SELECT k.nazwa_firmy, COUNT(z.id_klienta) FROM klienci k INNER JOIN zamowienia z ON k.id_klienta = z.id_klienta WHERE z.id_klienta >= 1 GROUP BY z.id_klienta ASC;
+zad 4
+SELECT p.nazwa_produktu, COUNT(sm.id_magazynu) FROM produkty p INNER JOIN stany_magazynowe sm ON p.id_produktu = sm.id_produktu WHERE sm.id_magazynu > 1 GROUP BY sm.id_magazynu ASC;
+zad 5
+
