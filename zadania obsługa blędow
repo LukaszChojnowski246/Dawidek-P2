@@ -1,0 +1,25 @@
+# 1
+# try:
+#     result = 5 / 0
+# except ZeroDivisionError as e:
+#     print(f"błąd: {e}")
+# else:
+#     print({result})
+# 2
+# try:
+#     file = open('cos.txt')
+#     content = file.read()
+# except FileNotFoundError as s:
+#     print(f"błąd : {s}")
+# 3
+
+# def liczba():
+#  liczba = int(input("podaj liczbe: "))
+#  if liczba < 5:
+#   raise ValueError("liczba nie moze byc mniejsza od 0")
+#  else:
+#     print("dobra liczba")
+
+# print(liczba())
+
+
