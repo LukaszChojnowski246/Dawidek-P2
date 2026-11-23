@@ -1,0 +1,61 @@
+import sqlite3
+
+conn = sqlite3.connect('baza.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+    )
+''')
+
+cursor.execute('''
+    INSERT INTO users (name, age) VALUES ('Marcin', 32)
+''')
+cursor.execute('''
+    INSERT INTO users (name, age) VALUES ('Natalia', 15)
+''')
+
+
+
+cursor.execute("""
+    UPDATE users SET age = 13 WHERE name = 'Marcin'
+""")
+
+
+cursor.execute("""
+    DELETE FROM users WHERE name = 'Natalia'
+""")
+
+
+# cursor.execute('SELECT * FROM users')
+# rows = cursor.fetchall()
+
+# for row in rows:
+#     print(row)
+
+cursor.execute('SELECT name, age FROM users WHERE age = 13')
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS zeczy  (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    odilu INTEGER
+    )
+''')
+
+cursor.execute('''
+    INSERT INTO zeczy (name, odilu) VALUES ('Natalia', 15)
+''')
+
+
+
+
