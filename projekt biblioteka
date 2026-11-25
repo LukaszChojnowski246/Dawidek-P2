@@ -1,0 +1,53 @@
+import sqlite3
+conn = sqlite3.connect('biblioteka.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS ksiegarnia (
+        id INTEGER PRIMARY KEY,
+        tytul TEXT,
+       autor INTEGER
+        )
+    ''')
+def dodanie(): 
+        a = input("podaj tutyl ksiazki ")
+        d = input("podaj autora ksiazki ")
+        cursor.execute('''
+        INSERT INTO ksiegarnia (tytul, autor) VALUES (?, ?)
+    ''', (a, d))
+        
+
+def usuwanie():
+      g = int(input("podaj id ksiazki "))
+      cursor.execute(''' 
+    DELETE FROM ksiegarnia WHERE id = ?
+''',(g))
+
+def update():
+    h = input("podaj autora ")
+    y = input("podaj tytul ")
+    m = input("podaj id ")
+    cursor.execute('''
+    UPDATE ksiegarnia SET autor = ?, tytul = ? WHERE id = ?
+''', (h), (y), (m))    
+
+
+
+
+    
+        
+while True:
+    print("witaj w ksiegarni")
+    print("dodaj A")
+    print("usuń B")
+    print("przegladaj ksiazki C")
+    print("aktualizuj dane o ksiazkach D")
+    a = input("co wybierasz? ")
+    if a == "A":
+          dodanie()
+    if a == "B":
+          usuwanie()
+    # if a == "C":
+    #       pobieranie()
+    if a == "D":
+          update()
