@@ -1,0 +1,79 @@
+import sqlite3
+try:
+    conn = sqlite3.connect('baza.db')
+    cursor = conn.cursor()
+    conn.commit()
+except sqlite3.Error as c:
+    print(f"błąd bazy danych: {c}")
+finally:
+    if conn:
+        conn.close()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+    id_imie INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+    )
+''')
+
+cursor.execute('''
+    INSERT INTO users (name, age) VALUES ('Marcin', 32)
+''')
+cursor.execute('''
+    INSERT INTO users (name, age) VALUES ('Natalia', 15)
+''')
+
+
+
+cursor.execute("""
+    UPDATE users SET age = 13 WHERE name = 'Marcin'
+""")
+
+
+cursor.execute("""
+    DELETE FROM users WHERE name = 'Natalia'
+""")
+
+
+# cursor.execute('SELECT * FROM users')
+# rows = cursor.fetchall()
+
+# for row in rows:
+#     print(row)
+
+# cursor.execute('SELECT name, age FROM users WHERE age = 13')
+# rows = cursor.fetchall()
+
+# for row in rows:
+#     print(row)
+
+
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS zeczy  (
+    id_zeczy INTEGER PRIMARY KEY,
+    nazwa TEXT,
+    cos INTEGER
+    )
+''')
+
+cursor.execute('''
+    INSERT INTO zeczy (nazwa, cos) VALUES ('kostka', 15)
+''')
+
+cursor.execute('SELECT u.name , u.age,z.nazwa, z.cos FROM zeczy z INNER JOIN users u ON z.id_zeczy = u.id_imie   ')
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+# cursor.execute('SELECT * FROM users')
+# rows = cursor.fetchall()
+
+# for row in rows:
+#     print(row)
+
+
+
+
