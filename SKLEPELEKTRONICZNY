@@ -1,0 +1,25 @@
+1.
+SELECT nazwa, cena_netto FROM produkty WHERE aktywny = 1 AND cena_netto < 1000 ORDER BY cena_netto DESC;
+2.
+SELECT nazwa, marka, cena_netto FROM produkty ORDER BY cena_netto DESC LIMIT 10;
+3.
+SELECT imie, nazwisko, miasto, data_urodzenia FROM klienci WHERE data_urodzenia BETWEEN 1990-01-01 AND 2026-11-26 AND miasto = 'Lublin' OR miasto = 'kraków' ORDER BY nazwisko, imie;
+4.
+SELECT imie, nazwisko, miasto, email, telefon FROM klienci WHERE telefon IS NULL ORDER BY miasto ASC, nazwisko ASC;
+5.
+SELECT nazwa, marka, cena_netto FROM produkty WHERE marka = 'Sony' OR marka = 'JBL' OR marka = 'Bose' AND cena_netto BETWEEN 300 AND 1500 ORDER BY marka asc, cena_netto DESC;
+6.
+SELECT id_zamowienia, metoda_platnosci FROM zamowienia WHERE status = 'anulowane' AND YEAR(data_zamowienia) = 2025 ORDER BY data_zamowienia DESC;
+7.
+SELECT imie, nazwisko, email, miasto FROM klienci ORDER BY miasto ASC;
+8.
+SELECT kod_produktu, nazwa, data_dodania FROM produkty WHERE stan_magazynowy = 0 AND aktywny = 1;
+9.
+SELECT imie, UPPER(nazwisko) FROM klienci;
+10.
+SELECT length(nazwa) FROM produkty WHERE length(nazwa) < 25 ORDER BY length(nazwa) DESC;
+11.
+SELECT concat(substring(lower(imie), 1, 1), '', lower(nazwisko)) FROM klienci LIMIT 15;
+12.
+
+https://drive.google.com/drive/folders/1YMeTJw_1diJmcmgeeHPPvgmSPED3hk3t
